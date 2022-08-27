@@ -21,7 +21,7 @@ class Iot_attendance:
             current_time = time.time()
             for (roll, scan_time) in list(self.recent_scans.items()):
                 duration = current_time - scan_time
-                if duration >= 15:
+                if duration >= 60:
                     del self.recent_scans[roll]
             time.sleep(10)
             self.successMessage = ''
